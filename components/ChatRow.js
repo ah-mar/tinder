@@ -12,10 +12,12 @@ const ChatRow = ({ matchDetails }) => {
   const [matchedUserInfo, setMatchedUserInfo] = useState(null);
   const [lastMessage, setLastMessage] = useState("");
 
+  //get matched user details from db and set as state variable
   useEffect(() => {
     setMatchedUserInfo(getMatchedUserInfo(matchDetails.users, user1.uid));
   }, [matchDetails, user1]);
 
+  // Get last message from db and set as state variable
   useEffect(
     () =>
       onSnapshot(
